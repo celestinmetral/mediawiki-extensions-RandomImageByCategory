@@ -21,6 +21,9 @@
 			"i18n"
 		]
 	},
+	"ExtensionMessagesFiles": {
+		"RandomImageByCategoryMagic": "RandomImageByCategory.i18n.php"
+	},
 	"Hooks": {
 		"ParserFirstCallInit": "RandomImageByCategory::registerTag"
 	},
