@@ -97,11 +97,13 @@ class RandomImageByCategory {
 			#$thumb_image = $render_image->transform( [ 'width' => $width ] );
 			#$thumbnail = "<a href=\"" . htmlspecialchars( $image_title->getFullURL() ) . "\">{$thumb_image->toHtml()}</a>";
 			#$thumbnail = htmlspecialchars( $image_title->getPartialURL() );
-			$thumbnail = "[[Fichier:" . htmlspecialchars( $image_title->getPartialURL() ). "|". $position ."|". $size ."|alt=L’image du jour : ".$image_title . $vignette ."|link=".  htmlspecialchars( $image_title->getFullURL() ) ."|L’image du jour]]";
+			#$thumbnail = "[[Fichier:" . htmlspecialchars( $image_title->getPartialURL() ). "|". $position ."|". $size ."|alt=L’image du jour : ".$image_title . $vignette ."|link=".  htmlspecialchars( $image_title->getFullURL() ) ."|]]bla";
+			$thumbnail = "{{ImageVitrine|titre=".htmlspecialchars( $image_title->getPartialURL() )."|position=". $position ."|taille=". $size ."|lien=".htmlspecialchars( $image_title->getFullURL() ) ."}}<div style='text-align: center;'>{{".$image_title."}}</div>";
 
 		}
 
-		return $thumbnail;
+		return array( $parser->recursiveTagParse($thumbnail), 'noparse' => false, 'isHTML' => true );
+		#return $thumbnail;
 	}
 }
 
