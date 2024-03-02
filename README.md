@@ -9,8 +9,8 @@ This repository is a personal fork of the Mediawiki extension of the same name, 
 Also, as what I really wanted was a random image of the day, I’ve edited the random selection part :
 
 -  get the current day number
--  limit the query to this amount of line
--  get the image index " this number "
+-  limit the query to this amount of lines
+-  get the image `images[date number]`
 
 I used a modulus operator if there is less images than the date number.
 
